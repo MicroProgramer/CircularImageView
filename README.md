@@ -24,7 +24,7 @@ Step 2. Add the dependency:
 ```
 dependencies {
     ...
-    implementation 'com.github.MicroProgramer:CircularImageView:Tag'
+    implementation 'com.github.MicroProgramer:CircularImageView:1.0.1'
 }
 ```
 
