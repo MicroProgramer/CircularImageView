@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:scrollbars="none"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ACACAC"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_avatar"
+            android:layout_marginBottom="10sp"
+            app:layout_constraintBottom_toTopOf="@id/info_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <com.microprogramer.library.CircularImageView
+                android:id="@+id/me_avatar"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                app:civ_border_width="3sp"
+                app:civ_border_color="#e1e1e1"
+                app:civ_border_overlay="true"
+                android:layout_margin="10sp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/placeholder_dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="lollipop" />
+
+            <ImageButton
+                android:id="@+id/edit_me_avatar"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_camera_icon"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                app:layout_constraintBottom_toBottomOf="@+id/me_avatar"
+                app:layout_constraintEnd_toEndOf="@+id/me_avatar"
+                tools:targetApi="lollipop" />
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/image_loading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/me_avatar"
+                app:layout_constraintEnd_toEndOf="@+id/me_avatar"
+                app:layout_constraintStart_toStartOf="@+id/me_avatar"
+                app:layout_constraintTop_toTopOf="@+id/me_avatar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20sp"
+            android:background="#fff"
+            android:id="@+id/info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/me_category">
+
+            <LinearLayout
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:padding="10sp"
+                    android:src="@drawable/ic_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/me_name"
+                        android:drawablePadding="20sp"
+                        android:gravity="center"
+                        android:drawableRight="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mubashar Hussain"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/me_gender_image"
+                    android:padding="10sp"
+                    android:src="@drawable/ic_male"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gender"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/me_gender"
+                        android:drawablePadding="20sp"
+                        android:gravity="center"
+                        android:drawableRight="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp"
+                android:weightSum="5">
+
+                <ImageView
+                    android:padding="10sp"
+                    android:src="@drawable/ic_email"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/me_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="microprogramers@gmail.com"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp"
+                android:id="@+id/me_change_password"
+                android:weightSum="5">
+
+                <ImageView
+                    android:padding="10sp"
+                    android:src="@drawable/ic_change_pass"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Change Password"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="10sp"
+                android:id="@+id/me_logout"
+                android:layout_marginBottom="10sp"
+                android:weightSum="5">
+
+                <ImageView
+                    android:padding="10sp"
+                    android:src="@drawable/ic_logout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:drawablePadding="15sp"
+            android:gravity="center"
+            android:textColor="#000"
+            android:id="@+id/me_bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Bio)"
+            app:layout_constraintBottom_toTopOf="@+id/me_category"
+            app:layout_constraintEnd_toEndOf="@+id/me_category"
+            app:layout_constraintStart_toStartOf="@+id/me_category"
+            app:layout_constraintTop_toBottomOf="@+id/info_name" />
+
+        <TextView
+            android:drawablePadding="15sp"
+            android:gravity="center"
+            android:textColor="#000"
+            android:drawableRight="@drawable/ic_edit_small"
+            android:id="@+id/me_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:text="Working Friend"
+            app:layout_constraintBottom_toTopOf="@id/info_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/me_bio" />
+
+        <TextView
+
+            android:id="@+id/info_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:gravity="center"
+            android:text="Mubashar Hussain"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/me_category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_avatar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

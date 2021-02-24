@@ -8,6 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CircularImageView" />
+        android:theme="@style/Theme.CircularImageView">
+        <activity android:name=".MainActivity"></activity>
+    </application>
 
 </manifest>
