@@ -1,6 +1,7 @@
 # CircularImageView
 A simple library to round your image by using this advance ImageView
 
+[![](https://www.jitpack.io/v/MicroProgramer/CircularImageView.svg)](https://www.jitpack.io/#MicroProgramer/CircularImageView)
 
 It uses a BitmapShader and **does not**:
 * create a copy of the original bitmap
@@ -26,7 +27,7 @@ Step 2. Add the dependency:
 ```
 dependencies {
     ...
-    implementation 'com.github.MicroProgramer:CircularImageView:1.0.1'
+    implementation 'com.github.MicroProgramer:CircularImageView:1.0.2'
 }
 ```
 
